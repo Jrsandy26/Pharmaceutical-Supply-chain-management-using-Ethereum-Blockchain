@@ -1,39 +1,32 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Lottie from "lottie-react";
-import loadingAnimation from "./assets/animations/medload.json"; 
+import loadingAnimation from "./assets/animations/medload.json";
+import galaxyVideo from "./assets/galaxy.mp4";
+import encryptionBg from "./assets/encryption-bg.webm";
 
 const containerStyle = {
-  display: "flex",
   height: "100vh",
-};
-
-const imageStyle = {
-  flex: 1,
-  backgroundImage: "url('images/mm.jpg')",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-};
-
-const formContainerStyle = {
-  flex: 1,
+  width: "100vw",
   display: "flex",
-  flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  background: "#b6eb7a",
+  position: "relative",
+  zIndex: 10,
 };
 
 const formStyle = {
-  width: "80%",
+  width: "90%",
   maxWidth: "400px",
   display: "flex",
   flexDirection: "column",
   padding: "30px",
-  background: "linear-gradient(to right, rgb(121, 252, 197), rgb(88, 192, 10))",
-  borderRadius: "10px",
-  boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+  background: "transparent", // ← fully transparent
+  borderRadius: "15px",
+  boxShadow: "0 8px 30px rgba(0, 0, 0, 0.3)", // optional subtle shadow for visibility
   alignItems: "center",
+  position: "relative",
+  zIndex: 20,
 };
 
 const logoStyle = {
@@ -46,13 +39,15 @@ const inputStyle = {
   width: "100%",
   padding: "12px",
   marginBottom: "15px",
-  border: "1px solid #ccc",
+  border: "1px solid rgba(255, 255, 255, 0.5)", // transparent border
   borderRadius: "5px",
   fontSize: "16px",
+  background: "transparent", // transparent background
+  color: "white", // white text color
 };
 
 const buttonStyle = {
-  background: "#004d4d",
+  background: "#8a2be2", // violet color
   color: "#fff",
   padding: "12px",
   border: "none",
@@ -65,10 +60,19 @@ const buttonStyle = {
 };
 
 const headingStyle = {
-  color: "#004d4d",
+  color: "#fff",
   fontSize: "28px",
   fontWeight: "bold",
   marginBottom: "20px",
+  textShadow: "0 1px 3px rgba(0,0,0,0.8)"
+};
+
+const textStyle = {
+  color: "#b49bff", // Soft color for the text
+  fontSize: "16px",
+  fontStyle: "italic",
+  marginBottom: "20px",
+  textAlign: "center",
 };
 
 function Login() {
@@ -87,14 +91,13 @@ function Login() {
       localStorage.setItem("userRole", res.data.role);
       localStorage.setItem("userName", res.data.name);
 
-      
       setTimeout(() => {
         setLoading(false);
-        
-        window.location.href = res.data.role === "Manufacturer" ? "/manufacturer"
-          : res.data.role === "Distributor" ? "/distributor"
-          : res.data.role === "Customer" ? "/customer"
-          : "/deliverypartner";
+        window.location.href =
+          res.data.role === "Manufacturer" ? "/manufacturer" :
+          res.data.role === "Distributor" ? "/distributor" :
+          res.data.role === "Customer" ? "Customer-Home" :
+          "/deliverypartner";
       }, 4000);
     } catch (err) {
       setLoading(false);
@@ -103,21 +106,74 @@ function Login() {
   };
 
   if (loading) {
-    
     return (
-      <div style={{ backgroundColor: "#fff", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <div style={{
+        backgroundColor: "#fff",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+      }}>
         <Lottie animationData={loadingAnimation} style={{ width: 100, height: 100 }} />
       </div>
     );
   }
 
   return (
-    <div style={containerStyle}>
-      <div style={imageStyle}></div>
-      <div style={formContainerStyle}>
+    <div style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
+      {/* Background Galaxy Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: -2
+        }}
+      >
+        <source src={galaxyVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Center Overlay Encryption Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: -1,
+          opacity: 0.7,
+          pointerEvents: "none",
+        }}
+      >
+        <source src={encryptionBg} type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Login Form */}
+      <div style={containerStyle}>
         <form style={formStyle} onSubmit={handleLogin}>
           <img src="images/logo.png" alt="Logo" style={logoStyle} />
           <h2 style={headingStyle}>Login</h2>
+          
+          {/* Additional Text Here */}
+          <p style={textStyle}>
+            Welcome! Please enter your credentials to access the platform.
+          </p>
+
           <input
             type="text"
             placeholder="Username"
