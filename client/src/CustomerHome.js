@@ -17,7 +17,6 @@ import bgGif from "./assets/bg.gif";
 import verifiedAnimation from "./assets/animations/verify.json";
 import shipmentAnimation from "./assets/animations/shipment.json";
 import galaxyVideo from "./assets/galaxy.mp4";
-
 import StoreLocator from "./storelocator"; // Import the store locator component
 
 const CustomerHome = () => {
@@ -95,28 +94,6 @@ const CustomerHome = () => {
               <source src={galaxyVideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 50,
-                transform: "translateX(-50%)",
-                width: "50%",
-                height: "100%",
-                objectFit: "cover",
-                zIndex: 1,
-                opacity: 0.7,
-                pointerEvents: "none",
-              }}
-            >
-              <source src={glob} type="video/webm" />
-              Your browser does not support the video tag.
-            </video>
           </div>
 
           {/* Scrollable Page Content */}
@@ -192,7 +169,7 @@ const CustomerHome = () => {
                             border: "1px solid rgba(255, 255, 255, 0.1)",
                             transition: "transform 0.3s, box-shadow 0.3s",
                             "&:hover": {
-                              transform: "translateY(5opx)",
+                              transform: "translateY(5px)",
                               boxShadow: "0 8px 24px rgba(0,255,255,0.2)",
                             },
                           }}
@@ -260,4 +237,5 @@ const CustomerHome = () => {
     </>
   );
 };
+
 export default CustomerHome;
