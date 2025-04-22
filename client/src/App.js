@@ -19,7 +19,8 @@ import OrderUpdates from "./OrderUpdates";
 import Sales from "./sales";
 import InvoiceGenerator from "./invoicegenerator"; 
 import ViewInvoice from "./viewinvoice"; 
-
+import CustomerHome from './CustomerHome';
+import StoreLocator from './storelocator';
 function App() {
   return (
     <div className="App">
@@ -39,10 +40,12 @@ function App() {
           <Route path="/track-order" component={TrackOrder} />
           <Route path="/view-orders" component={ViewOrder} />
           <Route path="/order-updates" component={OrderUpdates} />
+          <Route path="/customer-home" exact component={CustomerHome} />
           <Route path="/deliverypartner" component={DeliveryPartner} /> 
           <Route path="/sales" component={Sales} /> 
           <Route path="/invoice-generator" component={InvoiceGenerator} /> 
           <Route path="/view-invoice" component={ViewInvoice} /> 
+          <Route path="/store-locator" component={StoreLocator} /> 
         </Switch>
       </Router>
     </div>
