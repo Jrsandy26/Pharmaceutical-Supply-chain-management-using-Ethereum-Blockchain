@@ -17,7 +17,7 @@ import bgGif from "./assets/bg.gif";
 import verifiedAnimation from "./assets/animations/verify.json";
 import shipmentAnimation from "./assets/animations/shipment.json";
 import galaxyVideo from "./assets/galaxy.mp4";
-import glob from "./assets/glob.mp4";
+
 import StoreLocator from "./storelocator"; // Import the store locator component
 
 const CustomerHome = () => {
