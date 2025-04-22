@@ -36,7 +36,7 @@ const StoreLocator = () => {
   const [selectedStore, setSelectedStore] = React.useState(null);
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyDm_DBBIEnQup4KQYtELMdC_R9Y3xELOzc">
+    <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={13}>
         {stores.map((store) => (
           <Marker
