@@ -99,7 +99,7 @@ const Customer = () => {
         return;
       }
 
-      const response = await axios.get("https://pharma-backend-z97z.onrender.com/api/users", {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/users`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -123,7 +123,7 @@ const Customer = () => {
         return;
       }
 
-      const response = await axios.get("https://pharma-backend-z97z.onrender.com/api/customer/profile", {
+      const response = await axios.get("https://pharma-backend-z97z.onrender.com/api/users", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
