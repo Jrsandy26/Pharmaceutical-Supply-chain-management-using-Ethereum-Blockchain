@@ -23,12 +23,15 @@ const io = new Server(server, {
   cors: { origin: "*" }, 
 });
 
-app.use(express.json());
 app.use(cors({
-  origin: "https://pharmaceutical-supply.vercel.app", // ✅ frontend domain
-  credentials: true
+  origin: [
+    "https://pharmaceutical-supply.vercel.app", // Your frontend
+   // For local development
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
-
 app.use("/api/customers", customerRoutes);
 app.use("/api/orders", orderRoutes);
 
