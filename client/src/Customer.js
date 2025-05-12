@@ -444,6 +444,15 @@ const Customer = () => {
        
         <AppBar position="static" sx={{ background: "#1976d2" }}>
           <Toolbar>
+  <Box
+              component="img"
+              src="/images/logo.png" 
+              alt="Pharmacy Logo"
+              sx={{
+                height: 40, 
+                marginRight: 2, 
+              }}
+            />
             <Typography variant="h6" sx={{ flexGrow: 1 }}>Pharmacy</Typography>
             <IconButton color="inherit" onClick={handleMenuOpen}>
               <MenuIcon />
