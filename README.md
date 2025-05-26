@@ -112,6 +112,8 @@ If you find this project helpful, feel free to **fork** it and give it a ⭐️!
 https://github.com/MADHANESH/Pharmaceutical-Supply-chain-management-using-Ethereum-Blockchain-main.git
 ```
 ---
+### Journal Certificate
+![image](https://github.com/user-attachments/assets/b6875f87-6183-46af-abe5-71d7fb9e04a6)
 
 
 
