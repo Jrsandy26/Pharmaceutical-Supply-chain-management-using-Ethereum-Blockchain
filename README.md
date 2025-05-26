@@ -113,7 +113,8 @@ https://github.com/MADHANESH/Pharmaceutical-Supply-chain-management-using-Ethere
 ```
 ---
 ### Journal Certificate
-![image](https://github.com/user-attachments/assets/b6875f87-6183-46af-abe5-71d7fb9e04a6)
+![image](https://github.com/user-attachments/assets/bc589d2f-94e2-4825-a52b-921319018854)
+
 
 
 
