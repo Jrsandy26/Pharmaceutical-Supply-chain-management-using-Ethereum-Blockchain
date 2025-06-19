@@ -15,7 +15,7 @@
 
 ### Clone the Repository  
 ```bash
-
+https://github.com/Jrsandy26/Pharmaceutical-Supply-chain-management-using-Ethereum-Blockchain.git
 ```
 ### Open file directory
 ```bash
@@ -109,7 +109,7 @@ If you find this project helpful, feel free to **fork** it and give it a ⭐️!
 1. Click the **Fork** button at the top-right corner of this page.  
 2. Clone the forked repository to your local machine:  
 ```bash
-
+    https://github.com/Jrsandy26/Pharmaceutical-Supply-chain-management-using-Ethereum-Blockchain.git
 ```
 ---
 ### Journal Certificate
