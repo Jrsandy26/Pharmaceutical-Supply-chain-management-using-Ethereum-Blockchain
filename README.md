@@ -113,7 +113,7 @@ If you find this project helpful, feel free to **fork** it and give it a ⭐️!
 ```
 ---
 ### Journal Certificate
-![image]
+![Image](https://github.com/user-attachments/assets/a50fe1d6-c5c9-4a6c-b16c-0daffc821696)
 
 
 
