@@ -15,7 +15,7 @@
 
 ### Clone the Repository  
 ```bash
-https://github.com/MADHANESH/Pharmaceutical-Supply-chain-management-using-Ethereum-Blockchain-main.git
+
 ```
 ### Open file directory
 ```bash
@@ -109,11 +109,11 @@ If you find this project helpful, feel free to **fork** it and give it a ⭐️!
 1. Click the **Fork** button at the top-right corner of this page.  
 2. Clone the forked repository to your local machine:  
 ```bash
-https://github.com/MADHANESH/Pharmaceutical-Supply-chain-management-using-Ethereum-Blockchain-main.git
+
 ```
 ---
 ### Journal Certificate
-![image](https://github.com/user-attachments/assets/bc589d2f-94e2-4825-a52b-921319018854)
+![image]
 
 
 
